@@ -1,7 +1,16 @@
 // full list
 
 const LinkedList = () => {
+    const head = () => { // returns first item in list
+
+    }
+
+    const tail = () => { // returns last item in list
+
+    }
+
     const append = (value) => { // adds new value to end of list
+        let newAppendNode = Node(value, null);
 
     }
 
@@ -10,14 +19,6 @@ const LinkedList = () => {
     }
 
     const size = () => { // returns size of list
-
-    }
-
-    const head = () => { // returns first item in list
-
-    }
-
-    const tail = () => { // returns last item in list
 
     }
 
@@ -42,15 +43,19 @@ const LinkedList = () => {
     }
 
     return {
-        
+        append, prepend, size, head, tail, at, pop, contains, find, toString
     }
 }
 
+// [NODE(head)] -> [NODE] -> [NODE(tail)] -> null
+
 //
 
-const Node = () => {
+const Node = (value, nextNode) => {
     let value = null;
     let nextNode = null;
 
-
+    return {
+        value, nextNode
+    }
 }
