@@ -10,7 +10,7 @@ const LinkedList = () => {
     }
 
     const append = (value) => { // adds new value to end of list
-        let newAppendNode = Node(value, null);
+        let newAppendNode = Node(value);
 
     }
 
@@ -49,13 +49,25 @@ const LinkedList = () => {
 
 // [NODE(head)] -> [NODE] -> [NODE(tail)] -> null
 
-//
+// create node
 
-const Node = (value, nextNode) => {
-    let value = null;
+const Node = (value = null) => {
+    value = value;
     let nextNode = null;
 
     return {
         value, nextNode
     }
 }
+
+let node1 = Node("node 1");
+let node2 = Node("node 2");
+
+node1.nextNode = node2;
+
+console.log(node1)
+console.log(node1.nextNode);
+
+console.log(node2);
+console.log(node2.nextNode);
+
