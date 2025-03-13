@@ -9,7 +9,13 @@ const LinkedList = (head = null) => {
     }
 
     const tail = () => { // returns last item in list
+        while (head) {
+            head = head.nextNode;
 
+            if (head.nextNode == null) {
+                return head;
+            }
+        }
     }
 
     const append = (value) => { // adds new value to end of list
@@ -32,8 +38,17 @@ const LinkedList = (head = null) => {
     }
 
     const at = (index) => { // returns node at current index
-        for (let num = 0; num < index; num++) {
-            head = head.nextNode;
+        let num = 0;
+
+        while (head) {
+            head = head.nextNode
+            console.log(head);
+            num++;
+
+            if (num < index) {
+                console.log("this is the node at index " + index + ": " + head.value);
+                return head;
+            }
         }
     }
 
@@ -77,11 +92,22 @@ const Node = (value = null) => {
 
 
 let node1 = Node("node 1");
+
 let node2 = Node("node 2");
 
+let node3 = Node("node 3");
+
+let node4 = Node("node 4");
+
+let node5 = Node("node 5");
+
 node1.nextNode = node2;
+node2.nextNode = node3;
+node3.nextNode = node4;
+node4.nextNode = node5;
 
 let list = LinkedList(node1);
+list.at(4);
 
-console.log(list.size());
+console.log(list.tail());
 
