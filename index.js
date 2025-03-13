@@ -1,13 +1,12 @@
 // full list
 
 const LinkedList = (head = null) => {
-    // const head = (head = null) => { // returns first item in list
-    //     head = head;
-
-    //     return head
-    // }
 
     head = head;
+
+    const getHead = () => {
+        return head;
+    }
 
     const tail = () => { // returns last item in list
 
@@ -24,17 +23,18 @@ const LinkedList = (head = null) => {
 
     const size = () => { // returns size of list
         let count = 0;
-        let node = head;
-        while (node) {
+        while (head) {
             count++;
-            node = node.nextNode;
+            head = head.nextNode;
         } 
         
         return count
     }
 
     const at = (index) => { // returns node at current index
-
+        for (let num = 0; num < index; num++) {
+            head = head.nextNode;
+        }
     }
 
     const pop = () => { // removes last item in list
@@ -42,7 +42,11 @@ const LinkedList = (head = null) => {
     }
 
     const contains = (value) => { // returns true if value is in list, otherwise returns false
-
+        if (at(value) == true) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     const find = (value) => { // returns index of value if value is present, otherwise returns null
@@ -54,7 +58,7 @@ const LinkedList = (head = null) => {
     }
 
     return {
-        append, prepend, size, head, tail, at, pop, contains, find, toString
+        append, prepend, size, head, getHead, tail, at, pop, contains, find, toString
     }
 }
 
