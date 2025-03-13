@@ -1,9 +1,13 @@
 // full list
 
-const LinkedList = () => {
-    const head = () => { // returns first item in list
+const LinkedList = (head = null) => {
+    // const head = (head = null) => { // returns first item in list
+    //     head = head;
 
-    }
+    //     return head
+    // }
+
+    head = head;
 
     const tail = () => { // returns last item in list
 
@@ -19,7 +23,14 @@ const LinkedList = () => {
     }
 
     const size = () => { // returns size of list
-
+        let count = 0;
+        let node = head;
+        while (node) {
+            count++;
+            node = node.nextNode;
+        } 
+        
+        return count
     }
 
     const at = (index) => { // returns node at current index
@@ -60,14 +71,13 @@ const Node = (value = null) => {
     }
 }
 
+
 let node1 = Node("node 1");
 let node2 = Node("node 2");
 
 node1.nextNode = node2;
 
-console.log(node1)
-console.log(node1.nextNode);
+let list = LinkedList(node1);
 
-console.log(node2);
-console.log(node2.nextNode);
+console.log(list.size());
 
