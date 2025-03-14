@@ -34,18 +34,23 @@ const LinkedList = (head = null) => {
             head = head.nextNode;
         } 
         
-        return count + 1
+        return count
     }
 
     const at = (index) => { // returns node at current index
         let num = 0;
 
+        if (index == 0) {
+            console.log("this is the node at index " + index + ": " + head.value);
+            return head;
+        }
+
         while (head) {
             head = head.nextNode
-            console.log(head);
+            // console.log(head);
             num++;
 
-            if (num < index) {
+            if (num == index) {
                 console.log("this is the node at index " + index + ": " + head.value);
                 return head;
             }
@@ -53,10 +58,8 @@ const LinkedList = (head = null) => {
     }
 
     const pop = () => { // removes last item in list
-        // while (head) {
-        //     if (head.nextNode == null) {
-        //         delete head.value
-        //     }
+        // if (head.nextNode == null) {
+        //     delete head.value
         // }
     }
 
@@ -111,7 +114,8 @@ node3.nextNode = node4;
 node4.nextNode = node5;
 
 let list = LinkedList(node1);
-list.at(4);
+list.at(0);
 
+list.pop();
 console.log(list.size())
 
