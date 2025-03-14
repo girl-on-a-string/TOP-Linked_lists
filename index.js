@@ -34,7 +34,7 @@ const LinkedList = (head = null) => {
             head = head.nextNode;
         } 
         
-        return count
+        return count + 1
     }
 
     const at = (index) => { // returns node at current index
@@ -53,7 +53,11 @@ const LinkedList = (head = null) => {
     }
 
     const pop = () => { // removes last item in list
-
+        // while (head) {
+        //     if (head.nextNode == null) {
+        //         delete head.value
+        //     }
+        // }
     }
 
     const contains = (value) => { // returns true if value is in list, otherwise returns false
@@ -109,5 +113,5 @@ node4.nextNode = node5;
 let list = LinkedList(node1);
 list.at(4);
 
-console.log(list.tail());
+console.log(list.size())
 
