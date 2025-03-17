@@ -24,7 +24,10 @@ const LinkedList = (head = null) => {
     }
 
     const prepend = (value) => { // adds new value to beginning of list
+        let newPrependNode = Node(value);
+        newPrependNode.nextNode = head;
 
+        return newPrependNode
     }
 
     const size = () => { // returns size of list
@@ -72,7 +75,18 @@ const LinkedList = (head = null) => {
     }
 
     const find = (value) => { // returns index of value if value is present, otherwise returns null
+        while (head) {
+            head = head.nextNode
 
+            for (let count = 0; count++;) {
+                if (value === head.value) {
+                    console.log("found");
+                    return count;
+                } else {
+                    return null;
+                }
+            }
+        }
     } 
 
     const toString = () => { // represents linkedlists objects as strings, so you can print and preview them in the console
@@ -116,6 +130,5 @@ node4.nextNode = node5;
 let list = LinkedList(node1);
 list.at(0);
 
-list.pop();
-console.log(list.size())
+console.log(list.prepend("node x"));
 
